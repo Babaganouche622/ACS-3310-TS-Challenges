@@ -5,7 +5,7 @@
 
 // This function takes a callback that receives a string. 
 
-function callYouLater(callback, time) {
+function callYouLater<T>(callback: (T:string) => T, time: number) {
 	setTimeout(() => {
 	  callback('What it be like?')
 	}, time)
@@ -13,7 +13,7 @@ function callYouLater(callback, time) {
 
 
 
-function callMeMaybe(callback, probability) {
+function callMeMaybe<T>(callback: ({}) => T, probability: number) {
 	setTimeout(() => {
 		if (Math.random() * 100 < probability) {
 		  return callback({ success: true, probability })

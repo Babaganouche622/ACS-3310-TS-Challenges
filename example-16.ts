@@ -3,7 +3,7 @@
 // The next function returns the next element of 
 // arr. Since we don't know what type it is use 
 // a generic.
-function next(arr) {
+function next<T>(arr:T[]): T {
   return arr.pop()
 }
 
@@ -16,7 +16,7 @@ console.log(next(arr2))
 // fill() fills an array with any number of a 
 // repeated value. Since we don't know what type
 // the value is use a generic. 
-function fill(value, count) {
+function fill<T>(value:T, count:number): T[] {
   const arr = new Array(count)
   arr.fill(value)
   return arr
@@ -32,7 +32,7 @@ console.log(fill({}, 11))
 // Shuffle randomizes an array. Since can` contain
 // any type use a generic to return an array of 
 // the generic type
-function shuffle(arr) {
+function shuffle<T>(arr:T[]): T[] {
   const arrCopy = [...arr]
   arrCopy.sort(() => 0.5 - Math.random())
   return arrCopy
@@ -44,7 +44,7 @@ console.log(shuffle(arr3))
 
 // This functions takes an array and returns a function.
 // The function returns the next item in the array. 
-function iterate(arr) {
+function iterate<T>(arr:T[]): () => T {
   let i = 0
   return () => {
     i += 1

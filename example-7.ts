@@ -19,7 +19,8 @@ enum Suit {
 type Card = { suit: Suit, value: number }
 
 const ace: Card = {
-
+	suit: Suit.Spades,
+	value: 1
 }
 
 // Compile the code and check what type script says: 
